@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import web3 from './web3.js';
+ 
+class App extends Component {
+  render(){
+    window.ethereum.enable()
+      .then(web3.eth.getAccounts()
+        .then(console.log));
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +26,6 @@ function App() {
       </header>
     </div>
   );
-}
-
+}}
+ 
 export default App;
